@@ -24,6 +24,22 @@ function destroyAllSuggestions () {
     suggestions.forEach(item => item.remove())
 }
 
+function searchError () {
+    const suggestionsList = document.querySelector('.suggestions-list')
+    const suggestion = document.createElement('li')
+    suggestion.classList.add('suggestion')
+    const suggestionText = document.createElement('span')
+    suggestionText.textContent = 'No repositories found'
+    suggestionText.style.setProperty('color', '#B9D7EA')
+    suggestionText.classList.add('suggestion__text')
+    suggestion.appendChild(suggestionText)
+    suggestionsList.appendChild(suggestion)
+    suggestion.addEventListener('click', function (e) {
+        inputField.value = ''
+        destroyAllSuggestions()
+    })
+}
+
 function addRepo (name, owner, stars) {
     const closeIcon = '\u{00d7}'
     const repoList = document.querySelector('.repositories-list')
@@ -70,6 +86,9 @@ async function inputHandler () {
     const val = this.value
     await getData(val)
     destroyAllSuggestions()
+    if (allRepositories.length === 0) {
+        searchError()
+    }
     for (let repo of allRepositories) {
         addSuggestion(repo.name)
     }
