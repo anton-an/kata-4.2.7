@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    background-color: #F7FBFC;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+}
+
+.repositories {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    min-width: 300px;
+    max-width: 500px;
+    margin: 60px auto;
+    box-shadow: 0px 0px 35px -5px #D6E6F2;
+}
+
+.repositories__search-field {
+    height: 40px;
+    font-size: 28px;
+    color: #4b5f75;
+    border: none;
+    padding-left: 15px;
+}
+
+.repositories__search-field:focus {
+    outline-color: #769FCD;
+}
+
+.suggestions-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #FFFFFF;
+}
+
+.suggestion {
+    padding: 6px 15px;
+    box-shadow: 0px 28px 0px -26px #F7FBFC;
+}
+
+.suggestion:hover {
+    transition-duration: 500ms;
+    background-color: #D6E6F2;
+}
+
+.suggestion__text {
+    color: #4b5f75;
+}
+
+.repositories__search-field::placeholder {
+    color: #B9D7EA;
+}
+.repositories-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+}
+
+.repository {
+    position: relative;
+    padding: 8px 15px;
+    font-size: 16px;
+    box-shadow: 0px 37px 0px -35px #D6E6F2;
+}
+
+.repository:first-child {
+    border-top: 2px solid #D6E6F2;
+}
+
+.repository:last-child {
+    box-shadow: none;
+}
+
+.repository__text {
+    display: block;
+    color: #4b5f75;
+    margin: 0;
+    padding: 0;
+}
+
+.repository__delete-button {
+    position: absolute;
+    padding: 0;
+    right: 30px;
+    top: 10px;
+    width: 40px;
+    font-size: 48px;
+    color: #769FCD;
+    background-color: transparent;
+    border: none;
+}
+
+.repository__delete-button:hover {
+    transition-duration: 1s;
+    opacity: 0.5;
+}
